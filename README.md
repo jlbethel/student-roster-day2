@@ -14,7 +14,7 @@ A site that allows a user to create/edit/search a student roster.
 
 ##Technologies Used
 
-JavaScript, jQuery, html, css. Testing done with Mocha and Chai.
+Angular.js, JavaScript,  html, css. 
 
 ###Legal
 
