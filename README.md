@@ -11,7 +11,6 @@ A site that allows a user to create/edit/search a student roster.
 
 1. Clone repository from GitHub (to put on the desktop in terminal run ```cd ~/Desktop```, then run ```git clone https://github.com/jlbethel/student-roster.git``` or https://github.com/jtorrespdx/student_roster.git).
 2. Open the ```student_roster``` directory and then open ```index.html```.
-3. To test specs, in the spec directory open spec-runner.html.
 
 ##Technologies Used
 
