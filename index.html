@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="studentRoster">
   <head>
-    <title>Studen App</title>
+    <title>Student App</title>
     <script src="lib/angular.js"></script>
     <script src="app.js"></script>
+    <script src="services/StudentsFactory.js"></script>
     <script src="controllers/StudentsController.js"></script>
     <script src="controllers/FieldTripsController.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -50,11 +51,19 @@
           </div>
         </div>
       </div>
-      <div class="row permission" ng-controller="FieldTripsCtrl">
-        <div class="col-md-6">
-          <h2>Permission Slips</h2>
+      <div class="row" ng-controller="FieldTripsCtrl">
+        <div class="col-md-6" ng-show="studentsWithoutPermission.length">
+          <h3>Without Permission Slips</h3>
           <ul>
-            <li ng-repeat="item in studentsWithPermission">
+            <li ng-repeat="item in studentsWithoutPermission = (students | filter:{permissionSlip: false})">
+                {{item.name}} <a ng-click="addStudentWithPermissionSlip(item)"> - received permission slip -</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6" ng-show="studentsWithPermission.length">
+          <h3>Permission Slips</h3>
+          <ul>
+            <li ng-repeat="item in studentsWithPermission = (students | filter:{permissionSlip: true})">
               {{item.name}}
             </li>
           </ul>
